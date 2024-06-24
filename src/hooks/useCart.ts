@@ -76,7 +76,6 @@ export const useCart = () => {
     }
 
     //State Derivado
-    const isEmpty = useMemo(() => cart.length === 0, [cart]);
     const TotalCart = useMemo(() => cart.reduce((total: number, item: IGuitar) => total + (item.quantity * item.price), 0), [cart])
     return {
         data,
@@ -87,7 +86,6 @@ export const useCart = () => {
         increaseQuantity,
         emptyCart,
         decreaseQuantity,
-        isEmpty,
         TotalCart
     }
 }
